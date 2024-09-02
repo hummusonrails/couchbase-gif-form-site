@@ -7,88 +7,32 @@ layout: home
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>You + Couchbase == ❤️ for LATET</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
-
-        header, footer {
-            text-align: center;
-            padding: 10px;
-            background-color: #f8f8f8;
-            border-bottom: 1px solid #ddd;
-        }
-
-        footer {
-            border-top: 1px solid #ddd;
-            border-bottom: none;
-            margin-top: auto;
-        }
-
-        .content {
-            display: flex;
-            flex: 1;
-            padding: 20px;
-        }
-
-        .column {
-            flex: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .left-column {
-            background-color: #f0f0f0;
-        }
-
-        .right-column {
-            background-color: #ffffff;
-        }
-
-        .gif-box {
-            background-color: #ffffff;
-            padding: 20px;
-            border: 2px solid #e0e0e0;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            display: inline-block;
-        }
-
-        .gif {
-            max-width: 100%;
-            height: auto;
-        }
-
-        iframe {
-            width: 100%;
-            height: 80%;
-            border: none;
-        }
-    </style>
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="/favicon_io/site.webmanifest">
+    <link rel="mask-icon" href="/favicon_io/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="/favicon_io/favicon.ico">
+    <meta name="msapplication-TileColor" content="#2b5797">
+    <meta name="msapplication-config" content="/favicon_io/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body>
-    <header>
-        <h1>You + Couchbase == ❤️ for LATET</h1>
+<body class="flex flex-col min-h-screen">
+    <header class="bg-gray-100 text-center p-4 border-b border-gray-300">
+        <h1 class="text-2xl font-bold">You + Couchbase == ❤️ for LATET</h1>
     </header>
-    
-    <div class="content">
-        <div class="column left-column">
-            <div class="gif-box">
-                <img src="hacker_cat.gif" alt="GIF" class="gif">
+    <div class="flex flex-1 flex-col md:flex-row p-4">
+        <div class="flex flex-1 items-center justify-center bg-gray-200 p-4 md:mr-4 mb-4 md:mb-0">
+            <div class="bg-white p-4 border border-gray-200 shadow-lg">
+                <img src="hacker_cat.gif" alt="GIF" class="max-w-full h-auto">
             </div>
         </div>
-        <div class="column right-column">
-            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeSKmnw-4OupCqpMtPU1VEgfLNeeZagw58FrPgVXkeNoHm_Nw/viewform?embedded=true" width="640" height="1004" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+        <div class="flex flex-1 items-center justify-center bg-white p-4">
+            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeSKmnw-4OupCqpMtPU1VEgfLNeeZagw58FrPgVXkeNoHm_Nw/viewform?embedded=true" class="w-full h-96 md:h-full" frameborder="0">Loading…</iframe>
         </div>
     </div>
-    
-    <footer>
+    <footer class="bg-gray-100 text-center p-4 border-t border-gray-300 mt-auto">
         <p>&copy; Couchbase</p>
     </footer>
 </body>
