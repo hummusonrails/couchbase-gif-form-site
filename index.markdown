@@ -41,7 +41,7 @@ layout: home
             <!-- Processes will be injected here -->
         </div>
         <div id="win-message" class="mt-6 p-4 bg-green-500 rounded-md">
-            <p>🎉 You’ve exorcised the ghost process and restored harmony to the data realm! <br> Curious about taming real-world “ghosts” in your data? <a href="https://www.couchbase.com/products/sync-gateway/" class="underline">Click here to learn more!</a></p>
+            <p>🎉 You’ve exorcised the ghost process and restored harmony to the data realm! <br> Curious about taming real-world “ghosts” in your data? <a href="https://www.couchbase.com/products/sync-gateway?utm_campaign=timea_fm_and_devrel&utm_medium=field_marketing&utm_source=outreach&utm_content=conference" class="underline">Click here to learn more!</a></p>
         </div>
     </main>
 
