@@ -6,34 +6,76 @@ layout: home
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>You + Couchbase == ❤️ for LATET</title>
-    <link rel="apple-touch-icon" sizes="180x180" href="/favicon_io/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon_io/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon_io/favicon-16x16.png">
-    <link rel="manifest" href="/favicon_io/site.webmanifest">
-    <link rel="mask-icon" href="/favicon_io/safari-pinned-tab.svg" color="#5bbad5">
-    <link rel="shortcut icon" href="/favicon_io/favicon.ico">
-    <meta name="msapplication-TileColor" content="#2b5797">
-    <meta name="msapplication-config" content="/favicon_io/browserconfig.xml">
-    <meta name="theme-color" content="#ffffff">
+    <title>👻 Find the Ghost Process</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .process {
+            background-color: #f3f4f6;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .process:hover {
+            background-color: #e5e7eb;
+        }
+        .ghost {
+            color: orange;
+            font-weight: bold;
+        }
+        #win-message {
+            display: none;
+        }
+    </style>
 </head>
-<body class="flex flex-col min-h-screen">
-    <header class="bg-gray-100 text-center p-4 border-b border-gray-300">
-        <h1 class="text-2xl font-bold">You + Couchbase == ❤️ for LATET</h1>
+<body class="flex flex-col items-center min-h-screen bg-gray-900 text-white">
+
+    <header class="bg-gray-800 text-center p-4 w-full flex flex-col items-center">
+        <img src="logo.png" alt="Couchbase Logo" class="w-36 h-auto mb-4">
+        <h1 class="text-2xl font-bold">👻 Find the Ghost Process</h1>
     </header>
-    <div class="flex flex-1 flex-col md:flex-row p-4">
-        <div class="flex flex-1 items-center justify-center bg-gray-200 p-4 md:mr-4 mb-4 md:mb-0">
-            <div class="bg-white p-4 border border-gray-200 shadow-lg">
-                <img src="hacker_cat.gif" alt="GIF" class="max-w-full h-auto">
-            </div>
+
+    <main class="flex flex-col items-center flex-1 p-6 text-center">
+        <p class="mb-4 text-lg">One of these processes is haunted! Click the ghost process to exorcise it.</p>
+        <div id="process-list" class="grid grid-cols-2 gap-4 md:grid-cols-4">
+            <!-- Processes will be injected here -->
         </div>
-        <div class="flex flex-1 items-center justify-center bg-white p-4">
-            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeSKmnw-4OupCqpMtPU1VEgfLNeeZagw58FrPgVXkeNoHm_Nw/viewform?embedded=true" class="w-full h-96 md:h-full" frameborder="0">Loading…</iframe>
+        <div id="win-message" class="mt-6 p-4 bg-green-500 rounded-md">
+            <p>🎉 You’ve exorcised the ghost process and restored harmony to the data realm! <br> Curious about taming real-world “ghosts” in your data? <a href="https://www.couchbase.com/products/sync-gateway?utm_campaign=timea_fm_and_devrel&utm_medium=field_marketing&utm_source=outreach&utm_content=conference" class="underline">Click here to learn more!</a></p>
         </div>
-    </div>
-    <footer class="bg-gray-100 text-center p-4 border-t border-gray-300 mt-auto">
+    </main>
+
+    <footer class="bg-gray-800 text-center p-4 w-full mt-auto">
         <p>&copy; Couchbase</p>
     </footer>
+
+    <script>
+        const processes = [
+            "Process 101", "Process 102", "Process 103", "Process 104",
+            "Process 105", "Process 106", "Process 107", "Process 108"
+        ];
+        const ghostIndex = Math.floor(Math.random() * processes.length);
+
+        const processList = document.getElementById('process-list');
+        const winMessage = document.getElementById('win-message');
+
+        processes.forEach((process, index) => {
+            const processElement = document.createElement('div');
+            processElement.classList.add('process');
+            processElement.innerText = process;
+            if (index === ghostIndex) {
+                processElement.classList.add('ghost'); 
+                processElement.addEventListener('click', () => {
+                    winMessage.style.display = 'block';
+                    processList.style.display = 'none';
+                });
+            } else {
+                processElement.addEventListener('click', () => {
+                    alert("Not the ghost! Try another process.");
+                });
+            }
+            processList.appendChild(processElement);
+        });
+    </script>
 </body>
 </html>
